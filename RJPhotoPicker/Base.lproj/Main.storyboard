@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bih-bl-DUT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="KN3-yg-bbY">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Bih-bl-DUT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CJq-WH-8e9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AoN-Ih-Kkw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pm-qs-4ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255" y="-92"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APQ-84-R3o">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZl-5l-CMR">
+                                <rect key="frame" x="-4" y="233" width="383" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="i2b-0p-VBN"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghO-Vm-n8y">
+                                <rect key="frame" x="112.5" y="443" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.7843137255" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="b5n-yb-vdU"/>
+                                    <constraint firstAttribute="width" constant="150" id="bRy-KK-32z"/>
+                                </constraints>
+                                <state key="normal" title="Single Choose"/>
+                                <connections>
+                                    <action selector="pressSingleChooseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJB-eE-bbZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf9-YV-FUA">
+                                <rect key="frame" x="112" y="503" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.7843137255" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AaY-dn-hQW"/>
+                                    <constraint firstAttribute="height" constant="50" id="bm9-Cc-d1A"/>
+                                </constraints>
+                                <state key="normal" title="Mutable Choose"/>
+                                <connections>
+                                    <action selector="pressMutalbeChooseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r39-R4-eWO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vZl-5l-CMR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3ei-2z-wW8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vZl-5l-CMR" secondAttribute="trailing" constant="-20" id="T4s-Y2-QGq"/>
+                            <constraint firstItem="ghO-Vm-n8y" firstAttribute="top" secondItem="vZl-5l-CMR" secondAttribute="bottom" constant="10" id="US0-03-mYl"/>
+                            <constraint firstItem="ghO-Vm-n8y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VDt-YL-VX7"/>
+                            <constraint firstItem="Xf9-YV-FUA" firstAttribute="top" secondItem="ghO-Vm-n8y" secondAttribute="bottom" constant="10" id="ZeX-nP-mxJ"/>
+                            <constraint firstItem="Xf9-YV-FUA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zl9-c3-ssu"/>
+                            <constraint firstItem="vZl-5l-CMR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vgq-YA-GA3"/>
+                            <constraint firstItem="vZl-5l-CMR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="xG6-k6-h7b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oxh-57-e9n"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="vZl-5l-CMR" id="Z3l-87-fBf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="-92"/>
+        </scene>
+    </scenes>
+</document>
