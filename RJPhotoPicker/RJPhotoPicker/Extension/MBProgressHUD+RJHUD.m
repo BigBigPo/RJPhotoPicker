@@ -1,10 +1,4 @@
-//
-//  MBProgressHUD+RJHUD.m
-//  TingApp
-//
-//  Created by Apple on 15/12/23.
-//  Copyright © 2015年 Apple. All rights reserved.
-//
+
 
 #import "MBProgressHUD+RJHUD.h"
 #import "RJMacro.h"
@@ -17,12 +11,36 @@
     }
     MBProgressHUD * hud = [[MBProgressHUD alloc] initWithView:view];
     hud.removeFromSuperViewOnHide = YES;
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.backgroundColor = RJRGB(0, 0, 0, 0.4);
     [view addSubview:hud];
     [hud showAnimated:YES];
+    hud.minSize = CGSizeMake(100, 40);
     return hud;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
++ (MBProgressHUD *)showWaiting {
+    return [self showWaitingWithText:nil inView:SysWindow];
+}
+
++ (MBProgressHUD *)showWaitingWithText:(NSString *)text{
+    return [self showWaitingWithText:text inView:SysWindow];
+}
+
++ (MBProgressHUD *)showWaitingWithText:(NSString *)text inView:(UIView *)view {
+    MBProgressHUD * hud = [MBProgressHUD createWithView:view];
+    hud.label.text = text;
+    return hud;
+}
+
+- (void)showText:(NSString *)text Progress:(CGFloat)progress {
+    self.mode = MBProgressHUDModeAnnularDeterminate;
+    self.label.text = text;
+    self.progress = progress;
+}
+
 + (MBProgressHUD *)showProgressInView:(UIView *)view {
     MBProgressHUD * hud = [MBProgressHUD createWithView:view];
     hud.mode = MBProgressHUDModeDeterminate;
@@ -35,50 +53,15 @@
     [self setProgress:progress];
 }
 
-+ (MBProgressHUD *)showWaiting {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    return hud;
-}
-
-+ (MBProgressHUD *)showWaitingWithText:(NSString *)text{
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    hud.label.text = text;
-    return hud;
-}
-
-+ (MBProgressHUD *)showWaitingWithText:(NSString *)text detail:(NSString *)detail{
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    hud.label.text = text;
-    hud.detailsLabel.text = detail;
-    return hud;
-}
-
-+ (MBProgressHUD *)showWaitingWithText:(NSString *)text detail:(NSString *)detail inView:(UIView *)view{
-    MBProgressHUD * hud = [MBProgressHUD createWithView:view];
-    hud.label.text = text;
-    hud.detailsLabel.text = detail;
-    return hud;
-}
-
-- (void)showText:(NSString *)text Progress:(CGFloat)progress {
-    self.mode = MBProgressHUDModeAnnularDeterminate;
-    self.label.text = text;
-    self.progress = progress;
-}
-
 + (MBProgressHUD *)showInfo:(NSString *)text {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showInfo:text detail:nil];
-    return hud;
+    return [self showInfo:text detail:nil inView:SysWindow];
 }
 
 + (MBProgressHUD *)showInfo:(NSString *)text detail:(NSString *)detail {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showInfo:text detail:detail];
-    return hud;
+    return [self showInfo:text detail:detail inView:SysWindow];
 }
 
-+ (MBProgressHUD *)showInfo:(NSString *)text detail:(NSString *)detail inView:(UIView *)view{
++ (MBProgressHUD *)showInfo:(NSString *)text detail:(NSString *)detail inView:(UIView *)view {
     MBProgressHUD * hud = [MBProgressHUD createWithView:view];
     [hud showInfo:text detail:detail];
     return hud;
@@ -90,21 +73,15 @@
 
 #pragma mark - success
 + (MBProgressHUD *)showSuccess {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showSuccess:nil detail:nil];
-    return hud;
+    return [self showSuccess:nil detail:nil inView:SysWindow];
 }
 
 + (MBProgressHUD *)showSuccess:(NSString *)text {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showSuccess:text detail:nil];
-    return hud;
+    return [self showSuccess:text detail:nil inView:SysWindow];
 }
 
 + (MBProgressHUD *)showSuccess:(NSString *)text detail:(NSString *)detail {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showSuccess:text detail:detail];
-    return hud;
+    return [self showSuccess:text detail:detail inView:SysWindow];
 }
 
 + (MBProgressHUD *)showSuccess:(NSString *)text detail:(NSString *)detail inView:(UIView *)view {
@@ -125,29 +102,21 @@
     [self showCustomView:text detail:detail image:[UIImage imageNamed:@"MBProgressSuccess"]];
 }
 
-
-
 #pragma mark - error and info
 + (MBProgressHUD *)showError {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showError:nil detail:nil];
-    return hud;
+    return [self showError:nil detail:nil inView:SysWindow];
 }
 
 + (MBProgressHUD *)showError:(NSString *)text {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showError:text detail:nil];
-    return hud;
+    return [self showError:text detail:nil inView:SysWindow];
 }
 
 + (MBProgressHUD *)showError:(NSString *)text detail:(NSString *)detail {
-    MBProgressHUD * hud = [MBProgressHUD createWithView:SysWindow];
-    [hud showError:text detail:detail];
-    return hud;
+    return [self showError:text detail:detail inView:SysWindow];
 }
 
-+ (MBProgressHUD *)showError:(NSString *)text detail:(NSString *)detail inView:(UIView *)view{
-    MBProgressHUD * hud = [MBProgressHUD createWithView:view];
++ (MBProgressHUD *)showError:(NSString *)text detail:(NSString *)detail inView:(UIView *)inView {
+    MBProgressHUD * hud = [MBProgressHUD createWithView:inView];
     [hud showError:text detail:detail];
     return hud;
 }

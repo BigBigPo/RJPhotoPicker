@@ -58,6 +58,8 @@
         _imageTopMargin = 0;
         
         _isFullImageBtn = YES;
+        
+        [_bottomLeftButton.layer setCornerRadius:20];
     }
     return self;
 }
@@ -87,6 +89,7 @@
                 if (errorString) {
                     if (weakself.hud) {
                         [weakself.hud showError:errorString];
+                        weakself.hud = nil;
                     } else {
                         [MBProgressHUD showError:errorString];
                     }
@@ -96,15 +99,16 @@
         });
     }];
     
-    _scaleSize = [self getScaleSizeWithSize:CGSizeMake(asset.pixelWidth, asset.pixelHeight) boxSize:_scrollView.frame.size isFullAspect:_isFullImageBtn];
+    _scaleSize = [self getScaleSizeWithSize:CGSizeMake(asset.pixelWidth, asset.pixelHeight) boxSize:CGSizeMake(SCWidth, SCHeight / 2 - DEVICE_NAV_HEIGHT) isFullAspect:_isFullImageBtn];
     
-        CGSize targetSize = CGSizeMake(_scaleSize.width * _maxScaleValue, _scaleSize.height * _maxScaleValue);
-        weakself.requestID = [imageManager requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                if (result) {
-                    [weakself.showImageView setImage:result];
-                    [weakself configLayoutWithSize:_scaleSize];
-                }
-        }];
+    CGSize targetSize = CGSizeMake(_scaleSize.width * _maxScaleValue, _scaleSize.height * _maxScaleValue);
+    weakself.requestID = [imageManager requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            weakself.hud = nil;
+            if (result) {
+                [weakself.showImageView setImage:result];
+                [weakself configLayoutWithSize:_scaleSize];
+            }
+    }];
 }
 
 - (void)configLayoutWithSize:(CGSize)size {
@@ -115,6 +119,7 @@
     CGSize contentSize = _isFullImageBtn ? CGSizeMake(size.width, size.height):size;
     [_scrollView setZoomScale:1 animated:YES];
     [_scrollView setContentSize:contentSize];
+    _navHeight.constant = DEVICE_NAV_HEIGHT;
     _imageContentViewWidth.constant = size.width;
     _imageContentViewHeight.constant = size.height;
     
@@ -131,6 +136,7 @@
     _imageLeftMargin = marginWidth > 0 ? marginWidth : 0;
     _imageContentViewLeft.constant = _imageLeftMargin;
     _imageContentViewTop.constant = _imageTopMargin;
+    
     [self layoutIfNeeded];
     
 }

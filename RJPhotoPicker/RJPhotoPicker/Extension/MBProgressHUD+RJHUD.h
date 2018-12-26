@@ -1,12 +1,6 @@
-//
-//  MBProgressHUD+RJHUD.h
-//  TingApp
-//
-//  Created by Apple on 15/12/23.
-//  Copyright © 2015年 Apple. All rights reserved.
-//
 
-#import "MBProgressHUD.h"
+
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface MBProgressHUD (RJHUD)
 
@@ -24,8 +18,7 @@
  */
 + (MBProgressHUD *)showWaiting;
 + (MBProgressHUD *)showWaitingWithText:(NSString *)text;
-+ (MBProgressHUD *)showWaitingWithText:(NSString *)text detail:(NSString *)detail;
-+ (MBProgressHUD *)showWaitingWithText:(NSString *)text detail:(NSString *)detail inView:(UIView *)view;
++ (MBProgressHUD *)showWaitingWithText:(NSString *)text inView:(UIView *)view;
 
 /**
  *  @brief 显示进度条
@@ -45,6 +38,7 @@
 + (MBProgressHUD *)showInfo:(NSString *)text detail:(NSString *)detail;
 + (MBProgressHUD *)showInfo:(NSString *)text detail:(NSString *)detail inView:(UIView *)view;
 - (void)showInfo:(NSString *)text detail:(NSString *)detail;
+
 /**
  *  @brief 显示成功
  */
@@ -62,7 +56,7 @@
 + (MBProgressHUD *)showError;
 + (MBProgressHUD *)showError:(NSString *)text;
 + (MBProgressHUD *)showError:(NSString *)text detail:(NSString *)detail;
-+ (MBProgressHUD *)showError:(NSString *)text detail:(NSString *)detail inView:(UIView *)view;
++ (MBProgressHUD *)showError:(NSString *)text detail:(NSString *)detail inView:(UIView *)inView;
 - (void)showError;
 - (void)showError:(NSString *)text;
 - (void)showError:(NSString *)text detail:(NSString *)detail;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33374B1D21D3572E00B41B14 /* MBProgressHUD+RJHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 33374B1B21D3572E00B41B14 /* MBProgressHUD+RJHUD.m */; };
+		5D6778EB5B31F67625773BCC /* Pods_BASE_POD_RJPhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D3147BAE87F825F97F4F4A /* Pods_BASE_POD_RJPhotoPicker.framework */; };
 		CE114ED71DE2E80E002E45E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE114ED61DE2E80E002E45E8 /* main.m */; };
 		CE114EDA1DE2E80E002E45E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE114ED91DE2E80E002E45E8 /* AppDelegate.m */; };
 		CE114EDD1DE2E80E002E45E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE114EDC1DE2E80E002E45E8 /* ViewController.m */; };
@@ -23,14 +25,12 @@
 		CED3C70B1DE6C95400A197D6 /* RJAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED3C6EB1DE6C95400A197D6 /* RJAlbumCell.xib */; };
 		CED3C70C1DE6C95400A197D6 /* RJPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C6ED1DE6C95400A197D6 /* RJPhotoCell.m */; };
 		CED3C70D1DE6C95400A197D6 /* RJPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED3C6EE1DE6C95400A197D6 /* RJPhotoCell.xib */; };
-		CED3C70E1DE6C95400A197D6 /* MBProgressHUD+RJHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C6F11DE6C95400A197D6 /* MBProgressHUD+RJHUD.m */; };
 		CED3C70F1DE6C95400A197D6 /* UIButton+RJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C6F31DE6C95400A197D6 /* UIButton+RJButton.m */; };
 		CED3C7101DE6C95400A197D6 /* rj_showStyle_big@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED3C6F51DE6C95400A197D6 /* rj_showStyle_big@3x.png */; };
 		CED3C7111DE6C95400A197D6 /* rj_showStyle_small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED3C6F61DE6C95400A197D6 /* rj_showStyle_small@3x.png */; };
 		CED3C7121DE6C95400A197D6 /* RJPhotoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C6F81DE6C95400A197D6 /* RJPhotoHelper.m */; };
 		CED3C7131DE6C95400A197D6 /* RJPhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C6FA1DE6C95400A197D6 /* RJPhotoPicker.m */; };
 		CED3C7141DE6C95400A197D6 /* RJPhotoPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED3C6FB1DE6C95400A197D6 /* RJPhotoPicker.xib */; };
-		CED3C7151DE6C95400A197D6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C6FE1DE6C95400A197D6 /* MBProgressHUD.m */; };
 		CED3C7161DE6C95400A197D6 /* RJCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C7011DE6C95400A197D6 /* RJCollectionView.m */; };
 		CED3C7171DE6C95400A197D6 /* RJControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C7031DE6C95400A197D6 /* RJControl.m */; };
 		CED3C7181DE6C95400A197D6 /* RJTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C7071DE6C95400A197D6 /* RJTopView.m */; };
@@ -39,6 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33374B1B21D3572E00B41B14 /* MBProgressHUD+RJHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+RJHUD.m"; sourceTree = "<group>"; };
+		33374B1C21D3572E00B41B14 /* MBProgressHUD+RJHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+RJHUD.h"; sourceTree = "<group>"; };
+		46D3147BAE87F825F97F4F4A /* Pods_BASE_POD_RJPhotoPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BASE_POD_RJPhotoPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60F1B1EFF52011AB9944B446 /* Pods-BASE_POD-RJPhotoPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BASE_POD-RJPhotoPicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BASE_POD-RJPhotoPicker/Pods-BASE_POD-RJPhotoPicker.debug.xcconfig"; sourceTree = "<group>"; };
+		83ADDE5368FE77212074279A /* Pods-BASE_POD-RJPhotoPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BASE_POD-RJPhotoPicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BASE_POD-RJPhotoPicker/Pods-BASE_POD-RJPhotoPicker.release.xcconfig"; sourceTree = "<group>"; };
 		CE114ED21DE2E80E002E45E8 /* RJPhotoPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RJPhotoPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE114ED61DE2E80E002E45E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE114ED81DE2E80E002E45E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,8 +67,6 @@
 		CED3C6EC1DE6C95400A197D6 /* RJPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJPhotoCell.h; sourceTree = "<group>"; };
 		CED3C6ED1DE6C95400A197D6 /* RJPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJPhotoCell.m; sourceTree = "<group>"; };
 		CED3C6EE1DE6C95400A197D6 /* RJPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RJPhotoCell.xib; sourceTree = "<group>"; };
-		CED3C6F01DE6C95400A197D6 /* MBProgressHUD+RJHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+RJHUD.h"; sourceTree = "<group>"; };
-		CED3C6F11DE6C95400A197D6 /* MBProgressHUD+RJHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+RJHUD.m"; sourceTree = "<group>"; };
 		CED3C6F21DE6C95400A197D6 /* UIButton+RJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RJButton.h"; sourceTree = "<group>"; };
 		CED3C6F31DE6C95400A197D6 /* UIButton+RJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+RJButton.m"; sourceTree = "<group>"; };
 		CED3C6F51DE6C95400A197D6 /* rj_showStyle_big@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rj_showStyle_big@3x.png"; sourceTree = "<group>"; };
@@ -73,8 +76,6 @@
 		CED3C6F91DE6C95400A197D6 /* RJPhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJPhotoPicker.h; sourceTree = "<group>"; };
 		CED3C6FA1DE6C95400A197D6 /* RJPhotoPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJPhotoPicker.m; sourceTree = "<group>"; };
 		CED3C6FB1DE6C95400A197D6 /* RJPhotoPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RJPhotoPicker.xib; sourceTree = "<group>"; };
-		CED3C6FD1DE6C95400A197D6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		CED3C6FE1DE6C95400A197D6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CED3C7001DE6C95400A197D6 /* RJCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJCollectionView.h; sourceTree = "<group>"; };
 		CED3C7011DE6C95400A197D6 /* RJCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJCollectionView.m; sourceTree = "<group>"; };
 		CED3C7021DE6C95400A197D6 /* RJControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJControl.h; sourceTree = "<group>"; };
@@ -92,17 +93,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6778EB5B31F67625773BCC /* Pods_BASE_POD_RJPhotoPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F5C9DCA7BB48B6B272F05F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46D3147BAE87F825F97F4F4A /* Pods_BASE_POD_RJPhotoPicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B83BCE485FE83860CC01E4E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60F1B1EFF52011AB9944B446 /* Pods-BASE_POD-RJPhotoPicker.debug.xcconfig */,
+				83ADDE5368FE77212074279A /* Pods-BASE_POD-RJPhotoPicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE114EC91DE2E80E002E45E8 = {
 			isa = PBXGroup;
 			children = (
 				CE114ED41DE2E80E002E45E8 /* RJPhotoPicker */,
 				CE114ED31DE2E80E002E45E8 /* Products */,
+				B83BCE485FE83860CC01E4E3 /* Pods */,
+				4F5C9DCA7BB48B6B272F05F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,7 +173,6 @@
 				CED3C6E81DE6C95400A197D6 /* Cell */,
 				CED3C6EF1DE6C95400A197D6 /* Extension */,
 				CED3C6FF1DE6C95400A197D6 /* Tools */,
-				CED3C6FC1DE6C95400A197D6 /* ThirdPart */,
 				CED3C6F41DE6C95400A197D6 /* Resource */,
 			);
 			path = RJPhotoPicker;
@@ -183,8 +203,8 @@
 		CED3C6EF1DE6C95400A197D6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CED3C6F01DE6C95400A197D6 /* MBProgressHUD+RJHUD.h */,
-				CED3C6F11DE6C95400A197D6 /* MBProgressHUD+RJHUD.m */,
+				33374B1C21D3572E00B41B14 /* MBProgressHUD+RJHUD.h */,
+				33374B1B21D3572E00B41B14 /* MBProgressHUD+RJHUD.m */,
 				CED3C6F21DE6C95400A197D6 /* UIButton+RJButton.h */,
 				CED3C6F31DE6C95400A197D6 /* UIButton+RJButton.m */,
 				CEEE62071EA46F2500F40072 /* PHAsset+RJAsset.h */,
@@ -205,15 +225,6 @@
 				CE6B476C1DEE71E700249F9D /* rj_placeholderImage@3x.png */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		CED3C6FC1DE6C95400A197D6 /* ThirdPart */ = {
-			isa = PBXGroup;
-			children = (
-				CED3C6FD1DE6C95400A197D6 /* MBProgressHUD.h */,
-				CED3C6FE1DE6C95400A197D6 /* MBProgressHUD.m */,
-			);
-			path = ThirdPart;
 			sourceTree = "<group>";
 		};
 		CED3C6FF1DE6C95400A197D6 /* Tools */ = {
@@ -245,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE114EE91DE2E80E002E45E8 /* Build configuration list for PBXNativeTarget "RJPhotoPicker" */;
 			buildPhases = (
+				2683E961D7BDCD733269D873 /* [CP] Check Pods Manifest.lock */,
 				CE114ECE1DE2E80E002E45E8 /* Sources */,
 				CE114ECF1DE2E80E002E45E8 /* Frameworks */,
 				CE114ED01DE2E80E002E45E8 /* Resources */,
+				8DDE0BF1C3FA703BCEA53F7E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,19 +329,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2683E961D7BDCD733269D873 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BASE_POD-RJPhotoPicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DDE0BF1C3FA703BCEA53F7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BASE_POD-RJPhotoPicker/Pods-BASE_POD-RJPhotoPicker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BASE_POD-RJPhotoPicker/Pods-BASE_POD-RJPhotoPicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE114ECE1DE2E80E002E45E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CED3C70C1DE6C95400A197D6 /* RJPhotoCell.m in Sources */,
+				33374B1D21D3572E00B41B14 /* MBProgressHUD+RJHUD.m in Sources */,
 				CEEE62091EA46F2500F40072 /* PHAsset+RJAsset.m in Sources */,
-				CED3C70E1DE6C95400A197D6 /* MBProgressHUD+RJHUD.m in Sources */,
 				CED3C70A1DE6C95400A197D6 /* RJAlbumCell.m in Sources */,
 				CED3C70F1DE6C95400A197D6 /* UIButton+RJButton.m in Sources */,
 				CED3C7171DE6C95400A197D6 /* RJControl.m in Sources */,
 				CED3C7161DE6C95400A197D6 /* RJCollectionView.m in Sources */,
-				CED3C7151DE6C95400A197D6 /* MBProgressHUD.m in Sources */,
 				CED3C7131DE6C95400A197D6 /* RJPhotoPicker.m in Sources */,
 				CED3C7181DE6C95400A197D6 /* RJTopView.m in Sources */,
 				CE114EDD1DE2E80E002E45E8 /* ViewController.m in Sources */,
@@ -453,27 +512,35 @@
 		};
 		CE114EEA1DE2E80E002E45E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60F1B1EFF52011AB9944B446 /* Pods-BASE_POD-RJPhotoPicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5768E6K27;
 				INFOPLIST_FILE = RJPhotoPicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test12312;
+				PRODUCT_BUNDLE_IDENTIFIER = com.po.panda.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		CE114EEB1DE2E80E002E45E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83ADDE5368FE77212074279A /* Pods-BASE_POD-RJPhotoPicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5768E6K27;
 				INFOPLIST_FILE = RJPhotoPicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test12312;
+				PRODUCT_BUNDLE_IDENTIFIER = com.po.panda.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

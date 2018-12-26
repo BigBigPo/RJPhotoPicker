@@ -86,25 +86,35 @@ static NSString * const RJPhotoPickerCellID = @"RJPhotoPickerCellID";
 #pragma mark - user-define initialization
 - (void)doRequest {
     RJWeak(self)
+    MBProgressHUD * hud =[MBProgressHUD showWaitingWithText:@"loading"];
     [_helper getPhotoPermission:^(BOOL havePower) {
         if (havePower) {
             [weakself.helper getAllPhotoData];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakself configNav];
                 [weakself configCollectionView];
                 [weakself changeAlbumWithCount:0];
+                
+            });
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES];
             });
         } else {
-            NSLog(@"No Permission");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud showInfo:@"Don't have Permission" detail:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakself.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                });
+            });
         }
     }];
 }
 
 - (void)initData {
     _helper = [[RJPhotoHelper alloc] init];
-    
-    _topViewHeightMax = SCHeight / 2;
     _topViewTopMax = 50;
+    _topViewHeightMax = SCHeight / 2;
+    
     _dragStartY = 0;
     _canDragLink = NO;
     _helper.lineNum = 4;
@@ -163,7 +173,7 @@ static NSString * const RJPhotoPickerCellID = @"RJPhotoPickerCellID";
     CGFloat y = 0;
     if (isShow) {
         [self.view addSubview:[self getAlbumView]];
-        y = _topViewTopMax;
+        y = DEVICE_NAV_HEIGHT;
     } else {
         y = SCHeight;
     }
@@ -325,6 +335,9 @@ static NSString * const RJPhotoPickerCellID = @"RJPhotoPickerCellID";
     [self configCollectionViewLayout];
     [_collectionView setDelegate:self];
     [_collectionView setDataSource:self];
+    if (@available(iOS 11.0, *)) {
+        _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     [_collectionView registerNib:[UINib nibWithNibName:@"RJPhotoCell" bundle:nil] forCellWithReuseIdentifier:RJPhotoPickerCellID];
     
     [_collectionView setContentInset:UIEdgeInsetsMake(_topViewHeightMax, 0, 0, 0)];
@@ -358,7 +371,6 @@ static NSString * const RJPhotoPickerCellID = @"RJPhotoPickerCellID";
         if (weakself.canDragLink) {
             CGFloat exceedValue = marginValue - moveY - (weakself.dragDirection == RJDirectionUp ? startY : 0);
             CGFloat newTopValue = top - exceedValue;
-            
             [weakself.collectionView setContentInset:UIEdgeInsetsMake(newTopValue, 0, 0, 0)];
             weakself.navViewTop.constant = -((SCHeight / 2) - newTopValue);
         }
@@ -378,7 +390,7 @@ static NSString * const RJPhotoPickerCellID = @"RJPhotoPickerCellID";
 - (void)configNav {
     [_navView setDelegate:self];
     _navViewHeight.constant = _topViewHeightMax;
-    _navView.navHeight.constant = _topViewTopMax;
+    _navView.navHeight.constant = DEVICE_NAV_HEIGHT;
     _navViewWidth.constant = SCWidth;
     RJWeak(self)
     [_navView.bottomView setTrackingBlock:^(BOOL stop, RJDirection direction, CGPoint changeValue) {
@@ -398,6 +410,8 @@ static NSString * const RJPhotoPickerCellID = @"RJPhotoPickerCellID";
     }];
     
     [_navView setHidden:NO];
+    
+    [_navView layoutIfNeeded];
 }
 
 - (RJAlbumChooseView *)getAlbumView {

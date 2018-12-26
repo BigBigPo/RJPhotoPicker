@@ -10,6 +10,5 @@
 
 @interface PHAsset (RJAsset)
 - (PHContentEditingInputRequestID)checkAssetInfo:(void(^)(NSDictionary * info))infoBlock;
-
 - (PHContentEditingInputRequestID)checkIsICloudResource:(void(^)(BOOL isCloud))block;
 @end
